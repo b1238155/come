@@ -38,11 +38,8 @@ jobs:
           ref: gh-pages
           path: gh-pages
 
-      - name: Create gh-pages Branch
-        run: git checkout --orphan gh-pages
-
-      - name: Clear Old Files
-        run: git rm -rf .
+          -name: Clear Old Files
+          run: git rm -rf .
 
       - name: Copy Build Files
         run: cp -r ../build/* .
