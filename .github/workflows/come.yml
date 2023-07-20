@@ -38,15 +38,20 @@ jobs:
           ref: gh-pages
           path: gh-pages
 
+      - name: Create gh-pages Branch
+        run: git checkout --orphan gh-pages
+
+      - name: Clear Old Files
+        run: git rm -rf .
+
       - name: Copy Build Files
-        run: cp -r build/* gh-pages/
+        run: cp -r ../build/* .
 
       - name: Copy original App.js
-        run: cp App.js gh-pages/
+        run: cp ../App.js .
 
       - name: Commit and Push Changes
         run: |
-          cd gh-pages
           git config --global user.name 'GitHub Actions'
           git config --global user.email 'actions@github.com'
           git add .
