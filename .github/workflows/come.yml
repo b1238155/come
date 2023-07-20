@@ -38,13 +38,12 @@ jobs:
           ref: gh-pages
           path: gh-pages
 
-          -name: Clear Old Files
-          run: git rm -rf .
+          
 
       
 
-      - name: Copy original App.js
-        run: cp ../App.js .
+      - name: update App.js
+        run: echo>gh-pages/App.js .
 
       - name: Commit and Push Changes
         run: |
