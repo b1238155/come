@@ -41,8 +41,7 @@ jobs:
           -name: Clear Old Files
           run: git rm -rf .
 
-      - name: Copy Build Files
-        run: cp -r ../build/* .
+      
 
       - name: Copy original App.js
         run: cp ../App.js .
